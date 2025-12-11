@@ -1,2 +1,11 @@
-// placeholder file: factories/user.factory.ts
-// Sin implementación — sólo para mantener la estructura de carpetas.
+import { User } from "../../common/interfaces/user.interface";
+
+export class UserFactory {
+  static createUser(raw: User): User {
+    return {
+      ...raw,
+      createdAt: new Date(),
+      status: "active"
+    } as any;
+  }
+}
