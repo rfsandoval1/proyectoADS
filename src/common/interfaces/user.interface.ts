@@ -1,2 +1,7 @@
-// placeholder file: common/interfaces/user.interface.ts
-// Sin implementación — sólo para mantener la estructura de carpetas.
+
+export interface User {
+  name: string;
+  email: string;
+  password: string;
+  role: 'cliente' | 'asistente' | 'gerente';
+}
