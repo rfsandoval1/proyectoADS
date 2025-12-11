@@ -1,10 +1,10 @@
 export class ManagerStrategy {
   getDashboardData() {
     return {
-      title: "Dashboard Gerente",
+      title: 'Dashboard Gerente',
       empleados: 5,
       reportes: 12,
-      actividades: 7
+      actividades: 7,
     };
   }
 }
