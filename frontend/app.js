@@ -85,6 +85,19 @@ if (formularioLogin) {
   });
 }
 
+// Quick login helper used by the UI quick buttons
+function quickLogin(email, password) {
+  const form = qs('login-form');
+  if (!form) return;
+  const emailInput = qs('email');
+  const passInput = qs('password');
+  if (emailInput) emailInput.value = email;
+  if (passInput) passInput.value = password;
+  // submit the form programmatically
+  if (typeof form.requestSubmit === 'function') form.requestSubmit();
+  else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+}
+
 // Registro (página opcional)
 const formularioRegistro = qs('register-form');
 const resultadoRegistro = qs('register-result');
@@ -225,6 +238,43 @@ async function cargarDashboardPorRol(rol) {
   } catch (err) {
     contenedor.textContent = String(err);
   }
+}
+
+// Reset contraseña (página reset.html)
+const formularioReset = qs('reset-form');
+const resultadoReset = qs('reset-result');
+if (formularioReset) {
+  formularioReset.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (resultadoReset) resultadoReset.textContent = 'Enviando...';
+
+    const fd = new FormData(formularioReset);
+    const email = (fd.get('email') || '').toString().trim();
+    const code = (fd.get('code') || '').toString().trim();
+    const newPassword = (fd.get('newPassword') || '').toString().trim();
+
+    if (!email || !code || !newPassword) {
+      if (resultadoReset) resultadoReset.textContent = 'Completa todos los campos';
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/auth/reset`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, code, newPassword }),
+      });
+      const data = await res.json();
+      if (!res.ok || (data && data.ok === false)) {
+        if (resultadoReset) resultadoReset.textContent = data?.message || JSON.stringify(data);
+        return;
+      }
+      if (resultadoReset) resultadoReset.textContent = 'Contraseña restablecida. Serás redirigido al login.';
+      setTimeout(() => { globalThis.location.href = '/login.html'; }, 1200);
+    } catch (err) {
+      if (resultadoReset) resultadoReset.textContent = String(err);
+    }
+  });
 }
 
 if (botonCargar && selectorRol && resultadoDash) {

@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Dashboard Cliente - Sistema Roles</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <main class="container">
       <h1>Dashboard - Cliente</h1>
-      <section class="card">
+      <section class="card centered">
         <div id="dashboard-container" class="result"></div>
-        <p><a href="/">Volver</a></p>
+        <p class="helper"><button type="button" class="pill-btn ghost" onclick="globalThis.location.href='/'">Volver</button></p>
       </section>
     </main>
     <script>/* mark this page's role for client */ globalThis.__PAGE_ROLE = 'cliente';</script>

@@ -1,34 +1,53 @@
 :root {
-  --bg: #f5f7fb;
-  --card: #fff;
-  --accent: #2b6cb0;
+  --bg: #F8F5F1; /* exterior background */
+  --card: #FFFFFF; /* card background */
+  --accent: #F7C28C; /* Sign In button color */
+  --accent-1: #F5B06A; /* slightly darker for subtle gradient */
+  --text-main: #333333; /* main text color */
   --muted: #6b7280;
+  --input-border: #E0E0E0; /* very light gray for input borders */
 }
 
 * {
   box-sizing: border-box;
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
 }
-
 body {
   margin: 0;
   background: var(--bg);
-  color: #0f172a;
+  color: var(--text-main);
 }
 
 .container {
-  max-width: 900px;
-  margin: 28px auto;
-  padding: 16px;
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 20px;
 }
+
+/* Site header */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:26px;
+  padding:8px 4px;
+}
+.site-header .logo{display:flex;align-items:center;gap:12px}
+.site-header .logo .mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),var(--accent));box-shadow:0 8px 26px rgba(0,0,0,0.06)}
+.site-header .title{font-weight:800;color:var(--text-main);font-size:1.05rem}
+.site-header .actions{display:flex;gap:10px;align-items:center}
+.site-header .actions .btn{padding:8px 12px;border-radius:10px;border:none;cursor:pointer;background:transparent;color:var(--text-main);font-weight:600}
 
 .card {
   background: var(--card);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(12, 18, 30, 0.06);
-  margin-bottom: 12px;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(12, 18, 30, 0.06);
+  margin-bottom: 20px;
 }
+
+.centered{max-width:640px;margin:0 auto}
 
 h1 {
   margin: 0 0 12px 0;
@@ -37,33 +56,71 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 input,
-select {
-  padding: 8px;
-  border: 1px solid #e6edf3;
-  border-radius: 6px;
+select,
+textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background: #fbfdff;
+  font-size: 0.98rem;
+  line-height:1.4;
+  color: var(--text-main);
 }
 
 button {
-  background: var(--accent);
-  color: #fff;
-  padding: 8px 12px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-1));
+  color: var(--text-main);
+  padding: 12px 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight:700;
+  box-shadow:0 10px 26px rgba(0,0,0,0.06);
 }
 
 .result {
-  margin-top: 8px;
-  padding: 8px;
-  background: #f8fafc;
-  border-radius: 6px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fbfdff;
+  border-radius: 8px;
   color: var(--muted);
+  border:1px solid #f0f4f8;
 }
 
 pre.result {
   white-space: pre-wrap;
 }
+
+
+/* Enhanced buttons and micro-interactions */
+.pill-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:none;cursor:pointer;font-weight:700;box-shadow:0 8px 24px rgba(3,25,52,0.06);transition:transform .12s ease, box-shadow .12s ease, opacity .12s}
+.pill-btn .icon{width:18px;height:18px;border-radius:6px;display:inline-block;flex:0 0 18px}
+.pill-btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-1));color:var(--text-main)}
+.pill-btn.ghost{background:transparent;border:1px solid var(--input-border);color:var(--text-main)}
+.pill-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(3,25,52,0.14)}
+.pill-btn:active{transform:translateY(0)}
+
+/* Fancy input focus */
+input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 6px 24px rgba(245,176,106,0.12);border-color:var(--input-border)}
+
+/* Login quick buttons row */
+.quick-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+
+/* subtle animated background blobs */
+.bg-blob{display:none}
+.bg-blob.alt{display:none}
+
+/* small helpers */
+.logo-text{font-weight:700;color:var(--text-main);font-size:16px}
+
+/* helpers for spacing */
+.helper{margin-top:10px;color:var(--muted)}
+
+/* make links subtle */
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+

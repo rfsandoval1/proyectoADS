@@ -14,7 +14,14 @@ export const HARD_USERS: User[] = [
     role: 'asistente',
   },
   {
-    name: 'Simone Gerente',
+    name: 'Simone Cliente',
+    email: 'cliente2@test.com',
+    password: 'Cliente1234!',
+    role: 'cliente',
+  },
+
+  {
+    name: 'Oswaldo Gerente',
     email: 'gerente@test.com',
     password: 'Gerente123!',
     role: 'gerente',
