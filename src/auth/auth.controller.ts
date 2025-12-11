@@ -1,2 +1,13 @@
-// placeholder file: estructura del proyecto (auth.controller.ts)
-// Sin implementación — sólo para mantener la estructura de carpetas.
+import { Controller, Post, Body } from "@nestjs/common";
+import { AuthService } from "./auth.service";
+import { LoginDto } from "./dtos/login.dto";
+
+@Controller("auth")
+export class AuthController {
+  constructor(private readonly authService: AuthService) {}
+
+  @Post("login")
+  login(@Body() data: LoginDto) {
+    return this.authService.login(data);
+  }
+}
