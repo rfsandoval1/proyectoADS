@@ -1,2 +1,9 @@
-// placeholder file: strategies/assistant.strategy.ts
-// Sin implementación — sólo para mantener la estructura de carpetas.
+export class AssistantStrategy {
+  getDashboardData() {
+    return {
+      title: "Dashboard Asistente",
+      tareas: 8,
+      documentosPendientes: 4,
+    };
+  }
+}

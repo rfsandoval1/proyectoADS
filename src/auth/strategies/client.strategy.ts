@@ -1,2 +1,9 @@
-// placeholder file: strategies/client.strategy.ts
-// Sin implementación — sólo para mantener la estructura de carpetas.
+export class ClientStrategy {
+  getDashboardData() {
+    return {
+      title: "Dashboard Cliente",
+      pagosPendientes: 3,
+      comprobantes: 5,
+    };
+  }
+}

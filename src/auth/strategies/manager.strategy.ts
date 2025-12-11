@@ -1,2 +1,10 @@
-// placeholder file: strategies/manager.strategy.ts
-// Sin implementación — sólo para mantener la estructura de carpetas.
+export class ManagerStrategy {
+  getDashboardData() {
+    return {
+      title: "Dashboard Gerente",
+      empleados: 5,
+      reportes: 12,
+      actividades: 7
+    };
+  }
+}
