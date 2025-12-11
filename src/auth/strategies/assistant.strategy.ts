@@ -1,7 +1,7 @@
 export class AssistantStrategy {
   getDashboardData() {
     return {
-      title: "Dashboard Asistente",
+      title: 'Dashboard Asistente',
       tareas: 8,
       documentosPendientes: 4,
     };
