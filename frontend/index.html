@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sistema Roles - Frontend Simple</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Sistema Roles (Frontend)</h1>
+
+      <section id="login-section" class="card">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="cliente@test.com" />
+          <label>Password</label>
+          <input type="password" name="password" required placeholder="Cliente123!" />
+          <button type="submit">Entrar</button>
+        </form>
+        <div id="login-result" class="result"></div>
+      </section>
+
+      <section id="dashboard-section" class="card">
+        <h2>Dashboard</h2>
+        <label>Selecciona rol</label>
+        <select id="role-select">
+          <option value="cliente">Cliente</option>
+          <option value="asistente">Asistente</option>
+          <option value="gerente">Gerente</option>
+        </select>
+        <button id="load-dashboard">Cargar Dashboard</button>
+        <pre id="dashboard-result" class="result"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Notas</h2>
+        <ul>
+          <li>API: <code>http://127.0.0.1:3000</code></li>
+          <li>Credenciales ejemplo: <code>cliente@test.com / Cliente123!</code></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,2 +1,12 @@
-// placeholder file: dashboard.controller.ts
-// Sin implementación — sólo para mantener la estructura de carpetas.
+import { Controller, Get, Query } from "@nestjs/common";
+import { DashboardService } from "./dashboard.service";
+
+@Controller("dashboard")
+export class DashboardController {
+  constructor(private readonly dashboardService: DashboardService) {}
+
+  @Get()
+  showDashboard(@Query("role") role: string) {
+    return this.dashboardService.getDashboardByRole(role);
+  }
+}
