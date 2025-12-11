@@ -1,4 +1,8 @@
-// placeholder file: src/app.module.ts
-import { UsersModule } from './users/users.module';
-// Sin implementación — sólo para mantener la estructura de carpetas.
+import { Module } from "@nestjs/common";
+import { AuthModule } from "./auth/auth.module";
+import { DashboardModule } from "./dashboard/dashboard.module";
 
+@Module({
+  imports: [AuthModule, DashboardModule],
+})
+export class AppModule {}
