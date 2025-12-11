@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Registro - Sistema Roles</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <main class="container">
-      <h1>Registro</h1>
-      <section class="card">
+      <section class="card centered">
+        <h1>Registro</h1>
         <form id="register-form">
           <label for="name">Nombre</label>
           <input id="name" name="name" required placeholder="Tu nombre" />
@@ -23,7 +23,9 @@
           <button type="submit">Registrar</button>
         </form>
         <div id="register-result" class="result"></div>
-        <p><a href="/login.html">Ir a Login</a></p>
+        <p class="helper">
+          <button type="button" class="pill-btn ghost" onclick="globalThis.location.href='/login.html'">Ir a Login</button>
+        </p>
       </section>
     </main>
     <script src="app.js"></script>
