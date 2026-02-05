@@ -1,0 +1,131 @@
+/* Utilidades específicas para El Granito Finance Hub */
+
+/* Clases utilitarias para gradientes - Más verdes */
+.bg-granito-gradient {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 30%, #eab308 70%, #ffffff 100%);
+}
+
+.bg-granito-soft {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 50%, #fef9c3 100%);
+}
+
+.bg-granito-green {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
+}
+
+.bg-granito-yellow {
+  background: linear-gradient(135deg, #16a34a 0%, #22c55e 30%, #eab308 100%);
+}
+
+.bg-granito-hero {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 40%, #eab308 80%, #15803d 100%);
+}
+
+.bg-granito-card {
+  background: linear-gradient(145deg, #f0fdf4 0%, #dcfce7 70%, #fefce8 100%);
+}
+
+/* Botones con estilo El Granito */
+.btn-granito-primary {
+  @apply bg-granito-green-600 hover:bg-granito-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-granito-secondary {
+  @apply bg-granito-yellow-500 hover:bg-granito-yellow-600 text-granito-green-900 font-semibold py-2 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
+}
+
+.btn-granito-outline {
+  @apply border-2 border-granito-green-600 text-granito-green-600 hover:bg-granito-green-600 hover:text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300;
+}
+
+/* Tarjetas con estilo El Granito */
+.card-granito {
+  @apply bg-white border border-granito-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.card-granito-gradient {
+  @apply bg-granito-card border border-granito-green-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+/* Texto con colores El Granito */
+.text-granito-primary {
+  @apply text-granito-green-600;
+}
+
+.text-granito-secondary {
+  @apply text-granito-yellow-600;
+}
+
+/* Efectos de hover especiales */
+.hover-granito-glow:hover {
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+.hover-granito-yellow-glow:hover {
+  box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
+}
+
+/* Animaciones específicas */
+.animate-granito-pulse {
+  animation: granito-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes granito-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+}
+
+/* Gradientes de texto - Más verde */
+.text-granito-gradient {
+  background: linear-gradient(135deg, #22c55e, #16a34a, #eab308);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Bordes con gradiente - Más verde */
+.border-granito-gradient {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white), linear-gradient(135deg, #22c55e, #16a34a, #eab308);
+  background-clip: padding-box, border-box;
+}
+
+/* Navbar con estilo El Granito */
+.navbar-granito {
+  @apply bg-granito-soft backdrop-blur-sm border-b border-granito-green-200;
+}
+
+/* Sidebar con estilo El Granito */
+.sidebar-granito {
+  @apply bg-granito-card border-r border-granito-green-200;
+}
+
+/* Estados de formulario */
+.input-granito {
+  @apply border-granito-green-300 focus:border-granito-green-500 focus:ring-granito-green-500 rounded-lg;
+}
+
+.input-granito-error {
+  @apply border-red-500 focus:border-red-500 focus:ring-red-500;
+}
+
+.input-granito-success {
+  @apply border-granito-green-500 focus:border-granito-green-600 focus:ring-granito-green-500;
+}
+
+/* Alertas con colores El Granito */
+.alert-granito-success {
+  @apply bg-granito-green-50 border border-granito-green-200 text-granito-green-800 rounded-lg p-4;
+}
+
+.alert-granito-warning {
+  @apply bg-granito-yellow-50 border border-granito-yellow-200 text-granito-yellow-800 rounded-lg p-4;
+}
+
+.alert-granito-info {
+  @apply bg-granito-soft border border-granito-green-200 text-granito-green-700 rounded-lg p-4;
+}

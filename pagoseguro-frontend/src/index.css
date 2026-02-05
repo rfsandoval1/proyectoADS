@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar estilos específicos de El Granito */
+@import './granito-styles.css';
+
+/* El Granito Design System - Financial Trust & Reliability */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Fondo blanco */
+    --foreground: 120 100% 10%; /* Verde oscuro para el texto */
+
+    --card: 0 0% 100%; /* Blanco para las tarjetas */
+    --card-foreground: 120 100% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 100% 10%;
+
+    --primary: 142 71% 45%; /* Verde El Granito */
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 142 71% 60%;
+
+    --secondary: 48 89% 50%; /* Amarillo El Granito */
+    --secondary-foreground: 120 100% 10%;
+    --secondary-glow: 48 89% 65%;
+
+    --muted: 120 40% 94%; /* Verde muy suave */
+    --muted-foreground: 120 20% 40%;
+
+    --accent: 48 89% 50%; /* Amarillo como acento */
+    --accent-foreground: 120 100% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 30% 85%; /* Bordes verde suave */
+    --input: 120 30% 90%;
+    --ring: 142 71% 45%;
+
+    --success: 142 71% 45%; /* Verde para éxito */
+    --success-foreground: 0 0% 98%;
+
+    --warning: 48 89% 50%; /* Amarillo para advertencias */
+    --warning-foreground: 120 100% 10%;
+
+    /* Gradientes El Granito - Más verdes */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 71%, 45%), hsl(142, 71%, 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142, 60%, 40%), hsl(142, 70%, 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(142, 71%, 45%) 0%, hsl(142, 65%, 50%) 30%, hsl(48, 89%, 50%) 70%, hsl(0, 0%, 100%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(142, 30%, 90%));
+
+    /* Sombras con colores El Granito */
+    --shadow-elegant: 0 10px 30px -10px hsl(142, 71%, 45% / 0.2);
+    --shadow-glow: 0 0 40px hsl(142, 71%, 60% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(142, 71%, 45% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    /* Sidebar con colores El Granito */
+    --sidebar-background: 0 0% 100%; /* Fondo blanco */
+    --sidebar-foreground: 120 100% 10%; /* Texto verde oscuro */
+    --sidebar-primary: 142 71% 45%; /* Verde principal */
+    --sidebar-primary-foreground: 0 0% 98%; /* Texto blanco */
+    --sidebar-accent: 48 89% 50%; /* Amarillo de acento */
+    --sidebar-accent-foreground: 120 100% 10%; /* Texto verde oscuro */
+    --sidebar-border: 120 30% 85%; /* Bordes verde suave */
+    --sidebar-ring: 142 71% 45%; /* Ring verde */
+  }
+
+  .dark {
+    --background: 120 100% 3%; /* Verde muy oscuro */
+    --foreground: 120 20% 95%; /* Verde muy claro para texto */
+
+    --card: 120 50% 8%; /* Verde oscuro para tarjetas */
+    --card-foreground: 120 20% 95%;
+
+    --popover: 120 50% 8%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 71% 55%; /* Verde más brillante en oscuro */
+    --primary-foreground: 120 100% 3%;
+
+    --secondary: 48 89% 60%; /* Amarillo más brillante en oscuro */
+    --secondary-foreground: 120 100% 3%;
+
+    --muted: 120 50% 12%; /* Verde oscuro suave */
+    --muted-foreground: 120 20% 70%;
+
+    --accent: 48 89% 60%; /* Amarillo brillante */
+    --accent-foreground: 120 100% 3%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 120 20% 95%;
+
+    --border: 120 50% 15%; /* Bordes verde oscuro */
+    --input: 120 50% 15%;
+    --ring: 142 71% 55%;
+    
+    /* Sidebar oscuro con colores El Granito */
+    --sidebar-background: 120 100% 5%; /* Fondo verde muy oscuro */
+    --sidebar-foreground: 120 20% 90%; /* Texto claro */
+    --sidebar-primary: 142 71% 55%; /* Verde brillante */
+    --sidebar-primary-foreground: 120 100% 3%; /* Texto oscuro */
+    --sidebar-accent: 120 50% 15%; /* Verde oscuro de acento */
+    --sidebar-accent-foreground: 120 20% 90%; /* Texto claro */
+    --sidebar-border: 120 50% 15%; /* Bordes oscuros */
+    --sidebar-ring: 142 71% 55%; /* Ring verde brillante */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
